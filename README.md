@@ -39,7 +39,7 @@ Because this project follows PSD data privacy guidelines, the `data/` and `outpu
 
 1.  **Clone the repo**:
     ```bash
-    git clone [https://github.com/USERNAME/PopAsst_RR.git](https://github.com/USERNAME/PopAsst_RR.git)
+    git clone [https://github.com/AnnaOrtega-NOAA/PopAsst_RR.git](https://github.com/AnnaOrtega-NOAA/PopAsst_RR.git)
     ```
 2.  **Add Data**: Place your raw `.csv` files (e.g., `Yakushima_data_for_BiOp_2025.csv`) into the `data/` folder.
 3.  **Set Path**: Open `2025_abundance_trend.R` and update the `main.folder` variable to match your local path:
