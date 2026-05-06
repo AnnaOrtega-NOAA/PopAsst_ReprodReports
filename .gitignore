@@ -1,0 +1,18 @@
+# --- R Specific ---
+.Rhistory
+.RData
+.Rproj.user/
+*.Rproj
+
+# --- Project Outputs ---
+# Ignore the entire output folder and its subdirectories
+output/
+data/
+# Safety catch for any R objects saved outside the output folder
+*.rds
+*.Rdata
+*.rdata
+
+# --- OS Specific ---
+.DS_Store
+Thumbs.db
