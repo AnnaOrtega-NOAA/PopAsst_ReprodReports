@@ -1,7 +1,7 @@
 # PIFSC Hawaiian DSLL Sea Turtle Trend Update 2026
 
 This repository contains the Bayesian state-space modeling framework used to estimate abundance trends for sea turtle populations (Loggerhead and Leatherback) interacting with the Hawaii deep-set longline (DSLL) fishery.
-u
+
 ## Project Overview
 The tool implements a multivariate state-space model to estimate a shared population growth rate ($U$) and process variance ($Q$) across multiple nesting beach time series.
 
