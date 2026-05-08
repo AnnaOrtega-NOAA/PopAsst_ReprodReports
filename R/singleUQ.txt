@@ -1,18 +1,19 @@
-model
-{
+model {
    # 1. Beach Scaling Factors (A)
    # A[1] is the reference beach; others are scaled relative to it
    A[1] <- 0;
-   for(j in 2:n.timeseries) { A[j] ~ dnorm(a_mean, 1/(a_sd^2)); }
-   
-   U ~ dnorm(u_mean, 1/(u_sd^2));
-   tauQ ~ dgamma(q_alpha, q_beta);
-   Q <- 1/tauQ; 
+   for(j in 2:n.timeseries) { 
+      A[j] ~ dnorm(a_mean, 1/(a_sd^2)); 
+   }
    
    # 2. Process Model (Hidden State)
-   # We start at X[1] and derive X0 to satisfy the R script's tracking
-   X[1] ~ dnorm(x0_mean, 1/(x0_sd^2)); 
-   for(v in 1:1){ X0[v] <- X[1] - U; } 
+   U ~ dnorm(u_mean, 1/(u_sd^2));
+   tauQ ~ dgamma(q_alpha, q_beta);
+   Q <- 1/tauQ;
+
+   # Initial State
+   X[1] ~ dnorm(x0_mean, 1/(x0_sd^2));
+   X0 <- X[1] - U; # Satisfies tracking for year T-1
 
    for(tt in 2:n.yrs) {
       predX[tt] <- X[tt-1] + U;
@@ -20,11 +21,11 @@ model
    }
 
    # 3. Observation Model
-   # This loop now runs for all j=4 beaches
    for(j in 1:n.timeseries) {
       tauR[j] ~ dgamma(r_alpha, r_beta);
       R[j] <- 1/tauR[j];
       for(tt in 1:n.yrs) {
+          # Z is a vector of 1s passed from R [cite: 8]
           predY[j,tt] <- Z[j,1] * X[tt] + A[j];
           Y[j,tt] ~ dnorm(predY[j,tt], tauR[j]);
       }
