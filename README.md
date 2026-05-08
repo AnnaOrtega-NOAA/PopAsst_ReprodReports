@@ -5,10 +5,10 @@ This repository contains the Bayesian state-space modeling framework used to est
 ## Project Overview
 The tool implements a multivariate state-space model to estimate a shared population growth rate ($U$) and process variance ($Q$) across multiple nesting beach time series.
 
-**Key 2026 Updates (Anna Ortega):**
-* **Automated Site Alignment**: Dynamic handling of asynchronous time series (e.g., Jeen Yessa 2001 vs. Wermon 2006).
-* **Seasonal Cohort Analysis**: MARSS frequentist trends split by MidYear and EndYear nesting peaks for Leatherbacks.
-* **Dual-Scale DPS Status**: Integrated status plots provided on both Log and Natural (Annual Female) scales with "Ghost" density distributions.
+**Key 2026 Updates:**
+* **Automated Site Alignment**: Dynamic handling of asynchronous time series (e.g., Jeen Yessa 2001 vs. Jeen Syuab 2006).
+* **Seasonal Cohort Analysis**: MARSS frequentist trends split by Mid-Year and End-Year nesting peaks for Leatherbacks.
+* **Dual-Scale DPS Status**: Integrated status plots provided on both Log and Natural (Annual Female) scales with density distributions.
 * **Risk Metrics**: Automated calculation of 100-year projection crossing years for 50%, 25%, and 12.5% declines.
 
 ---
